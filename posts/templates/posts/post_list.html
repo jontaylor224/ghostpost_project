@@ -1,0 +1,33 @@
+{% extends "posts/index.html" %}
+
+{% block content %}
+<div class="sortButtons">
+    <a href="/" class="button">Sort by Time</a>
+    <a href="/" class="button">Sort by Votes</a>
+</div>
+<br>
+<div class="postList">
+    {% for post in posts %}
+    <div class="post">
+
+        <div class="votesColumn">
+            <p>Votes: {{ post.votes }}</p>
+        </div>
+        <div class="voteButtonColumn">
+            <a href="{% url 'upvote' post.pk %}" class="voteButton">Upvote</a>
+            <a href="{% url 'downvote' post.pk %}" class="voteButton">Downvote</a>
+        </div>
+        <div class="boastColumn">
+            {% if post.is_boast %}
+            <img src="../../static/images/boast.png" alt="Smiling star image - boast by Yugudesign from the Noun Project" class="icon">
+            {% else %}
+            <img src="../../static/images/flame.png" alt="Flame image - Flame by Iga from the Noun Project" class="icon">
+            {% endif %}
+        </div>
+        <div class="contentColumn">
+            <p>{{ post.content }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

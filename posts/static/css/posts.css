@@ -1,0 +1,83 @@
+body {
+    background-color: ghostwhite;
+    font-family: 'Acme', sans-serif;
+}
+
+h1 a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+h1 a:visited {
+    text-decoration: none;
+    color: darkblue;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 20px;
+}
+
+.button {
+    background-color: blanchedalmond;
+    color: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 10%;
+    padding: 3px;
+    text-decoration: none;
+}
+.button:visited {
+    color: darkblue
+}
+
+.sortButtons {
+    margin-left: 20px;
+}
+
+.postList {
+    margin-left: 20px;
+}
+
+.post {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.boastColumn{
+    display: inline-flex;
+}
+
+.votesColumn {
+    display: inline-flex;
+}
+
+.voteButtonColumn {
+    display: inline-flex;
+    flex-direction: column;
+    margin: auto 10px;
+}
+
+.voteButton {
+    background-color: blanchedalmond;
+    color: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 10%;
+    padding: 3px;
+    text-decoration: none;
+}
+
+.voteButton:visited {
+    color: darkblue
+}
+
+
+.contentColumn{
+    display: inline-flex;
+}
+
+.icon {
+    width: 60px;
+}
