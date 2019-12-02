@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="sortButtons">
-    <a href="/" class="button">Sort by Time</a>
-    <a href="{% url 'votes_all' %}" class="button">Sort by Votes</a>
+    <a href="{% url 'boasts_only' %}" class="button">Sort by Time</a>
+    <a href="{% url 'votes_boasts_only' %}" class="button">Sort by Votes</a>
 </div>
 <br>
 <div class="postList">

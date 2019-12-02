@@ -6,8 +6,33 @@ import string
 
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('created_datetime')
     return render(request, 'posts/post_list.html', {'posts': posts})
+
+
+def votes_sorted_index(request):
+    posts = Post.objects.all().order_by('-votes')
+    return render(request, 'posts/post_list.html', {'posts': posts})
+
+
+def time_sorted_only_boasts_view(request):
+    posts = Post.objects.filter(is_boast=1).order_by('created_datetime')
+    return render(request, 'posts/boast_only_list.html', {'posts': posts})
+
+
+def vote_sorted_only_boasts_view(request):
+    posts = Post.objects.filter(is_boast=1).order_by('-votes')
+    return render(request, 'posts/boast_only_list.html', {'posts': posts})
+
+
+def time_sorted_only_roasts_view(request):
+    posts = Post.objects.filter(is_boast=0).order_by('created_datetime')
+    return render(request, 'posts/roast_only_list.html', {'posts': posts})
+
+
+def vote_sorted_only_roasts_view(request):
+    posts = Post.objects.filter(is_boast=0).order_by('-votes')
+    return render(request, 'posts/roast_only_list.html', {'posts': posts})
 
 
 def add_post(request):

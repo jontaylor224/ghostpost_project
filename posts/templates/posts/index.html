@@ -18,8 +18,8 @@
     </div>
     <nav>
         <div id="BoastRoastButtons">
-            <a href="/" class="button">View Only Boasts</a>
-            <a href="/" class="button">View Only Roasts</a>
+            <a href="{% url 'boasts_only' %}" class="button">View Only Boasts</a>
+            <a href="{% url 'roasts_only' %}" class="button">View Only Roasts</a>
         </div>
         <a href="{% url 'add_post' %}" id="new_post" class="button">New Post</a>
     </nav>
